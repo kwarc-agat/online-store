@@ -1,0 +1,61 @@
+﻿@model lab12_1.ViewModels.ShopViewModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Shop</h1>
+<br />
+<form asp-controller="Shop" asp-action="Index" method="get">
+    <p>
+        <select asp-for="ArticleCategory" asp-items="Model.Categories">
+            <option value="">All</option>
+        </select>
+        <input type="submit" value="Filter" />
+    </p>
+</form>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Articles[0].Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Articles[0].Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Articles[0].Category.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Articles[0].Photo)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Articles) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Category.Name)
+            </td>
+            <td>
+                <img src="~/images/@item.Photo"
+                     class="img-thumbnail"
+                     height="80" width="80"
+                     asp-append-version="true" alt="No image" />
+            </td>
+            <td>
+                <a asp-controller="Articles" asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-controller="Articles"asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-controller="Articles"asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
