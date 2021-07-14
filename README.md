@@ -16,7 +16,9 @@ Sample catalogue for home accessories shop.
 
 ## Demo
 
-<i>in preparation</i>
+![](https://github.com/kwarc-agat/online-store/blob/master/demo_imgs/img_1.jpg)
+![](https://github.com/kwarc-agat/online-store/blob/master/demo_imgs/img_3.jpg)
+![](https://github.com/kwarc-agat/online-store/blob/master/demo_imgs/img_2.jpg)
 
 ## Getting started
 
