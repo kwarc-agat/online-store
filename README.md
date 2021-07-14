@@ -23,7 +23,7 @@ Sample catalogue for home accessories shop.
 ## Getting started
 
 ```sh
-git clone https://github.com/kwarc-agat/skryptowe20.git
+git clone <some url>
 ```
 Open solution in Microsoft Visual Studio and in Package Manager Console run:
 
